@@ -73,8 +73,8 @@ pub(crate) fn parse_record(mut src: &[u8], header: &Header, record: &mut Record)
     let field = next_field(&mut src);
     *record.quality_scores_mut() = parse_quality_scores(field)?;
 
-    let field = next_field(&mut src);
-    *record.data_mut() = parse_data(field)?;
+    //let field = next_field(&mut src);
+    *record.data_mut() = parse_data(src)?;
 
     Ok(())
 }
